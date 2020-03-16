@@ -1,7 +1,7 @@
 <?php
 /**
  * @author Ovunc Tukenmez <ovunct@live.com>
- * @version 1.0.0
+ * @version 1.1.0
  * Date: 15.03.2020
  *
  * This class adds samesite parameter for cookies created by session_start function.
@@ -46,10 +46,23 @@ class SameSiteSessionStarter
             }
             $is_secure = ($same_site == 'None' ? true : self::$is_secure);
 
-            ini_set('cookie_samesite', $same_site);
+            if ($same_site == 'None'){
+                ini_set('cookie_samesite', ($same_site == 'None' ? '' : $same_site));
+            }
+
             ini_set('cookie_secure ', $is_secure);
 
             @session_start();
+            if ($same_site == 'None')
+            {
+                $headers_list = headers_list();
+                foreach ($headers_list as $_header) {
+                    if (strpos($_header, 'Set-Cookie: ' . session_name()) === 0) {
+                        header($_header . '; SameSite=None');
+                        break;
+                    }
+                }
+            }
         }
     }
 
