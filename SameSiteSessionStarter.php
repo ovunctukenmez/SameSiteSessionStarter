@@ -1,8 +1,8 @@
 <?php
 /**
  * @author Ovunc Tukenmez <ovunct@live.com>
- * @version 1.0.0
- * Date: 15.03.2020
+ * @version 1.1.0
+ * Date: 27.03.2020
  *
  * This class adds samesite parameter for cookies created by session_start function.
  * The browser agent is also checked against incompatible list of browsers.
@@ -46,8 +46,8 @@ class SameSiteSessionStarter
             }
             $is_secure = ($same_site == 'None' ? true : self::$is_secure);
 
-            ini_set('cookie_samesite', $same_site);
-            ini_set('cookie_secure ', $is_secure);
+            ini_set('session.cookie_samesite', $same_site);
+            ini_set('session.cookie_secure', $is_secure);
 
             @session_start();
         }
