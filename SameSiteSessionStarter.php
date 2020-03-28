@@ -1,7 +1,7 @@
 <?php
 /**
  * @author Ovunc Tukenmez <ovunct@live.com>
- * @version 1.3.0
+ * @version 1.3.1
  * Date: 28.03.2020
  *
  * This class adds samesite parameter for cookies created by session_start function.
@@ -45,10 +45,13 @@ class SameSiteSessionStarter
                     $new_headers[] = $_header;
                 }
 
-                header_remove();
-                $new_headers = array_reverse($new_headers);
-                foreach ($new_headers as $_header){
-                    header($_header,false);
+                if ($is_modified)
+                {
+                    header_remove();
+                    $new_headers = array_reverse($new_headers);
+                    foreach ($new_headers as $_header){
+                        header($_header,false);
+                    }
                 }
             }
         } else {
