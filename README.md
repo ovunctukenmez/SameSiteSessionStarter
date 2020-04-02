@@ -18,6 +18,12 @@ SameSiteSessionStarter::$is_secure = true;
 SameSiteSessionStarter::session_start();
 ```
 
+## Composer
+
+```
+composer require ovunctukenmez/samesite-session-starter
+```
+
 ## NOTES
 SameSite=None (default setting) works only with Secure cookies.  
 So please make sure to use https protocol to start session correctly. 

@@ -4,7 +4,7 @@ namespace ovunctukenmez;
 /**
  * @author Ovunc Tukenmez <ovunct@live.com>
  * @version 1.3.2
- * Date: 28.03.2020
+ * Date: 02.04.2020
  *
  * This class adds samesite parameter for cookies created by session_start function.
  * The browser agent is also checked against incompatible list of browsers.
