@@ -1,0 +1,18 @@
+{
+    "name": "ovunctukenmez/samesite-session-starter",
+    "description": "This class enables samesite session_start.",
+    "type": "library",
+    "license": "GNU",
+    "authors": [
+        {
+            "name": "Ovunc Tukenmez",
+            "email": "ovunct@live.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "ovunctukenmez\\": "/"
+        }
+    },
+    "require": {}
+}
