@@ -2,7 +2,7 @@
     "name": "ovunctukenmez/samesite-session-starter",
     "description": "This class enables samesite session_start.",
     "type": "library",
-    "license": "GNU",
+    "license": "GPL-3.0-or-later",
     "authors": [
         {
             "name": "Ovunc Tukenmez",
